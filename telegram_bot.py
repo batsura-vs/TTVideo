@@ -34,6 +34,6 @@ def start(update, context):
 
 if __name__ == '__main__':
     updater = Updater(token)
-    updater.dispatcher.add_handler(MessageHandler(Filters.photo, make_videos))
-    updater.dispatcher.add_handler(CommandHandler('start', start))
+    updater.dispatcher.add_handler(MessageHandler(Filters.photo, make_videos, run_async=True))
+    updater.dispatcher.add_handler(CommandHandler('start', start, run_async=True))
     updater.start_polling()
